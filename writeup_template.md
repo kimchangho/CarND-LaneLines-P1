@@ -15,7 +15,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
+[image1]: ./examples/write_image.png "Image Convert per Step"
 
 ---
 
@@ -23,11 +23,7 @@ The goals / steps of this project are the following:
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
-
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
-
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I used Gaussian_blur function for reduce noise. After then i converted to Canny Edge as you see below, then i set interest rigion of image for sure detect for line. 4step is hough transform so i need to adjust several parameter(min_line_length, max_line_gap ..). the last step is image weighted that is compound both image which i converted and original image. finally i can see line detection on original image.
 
 ![alt text][image1]
 
@@ -35,13 +31,9 @@ If you'd like to include images to show how the pipeline works, here is how to i
 ### 2. Identify potential shortcomings with your current pipeline
 
 
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
+One potential shortcoming would be what the path image environment like brightness, damaged image can be changed so that i have to change my parameter but it is not good for real driving.
 
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
-
-Another potential improvement could be to ...
+A possible improvement would be to apply machine learning skill. i expect the machine learning argorithm can change my parameter that i set theirself. 
